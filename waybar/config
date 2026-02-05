@@ -1,0 +1,70 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 28,
+    "margin-top": 5,
+    "margin-bottom": 1,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 6,
+    "reload_style_on_change": true,
+
+    "modules-left": ["clock", "tray", "custom/music"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["cpu", "memory", "battery", "network", "pulseaudio", "custom/notification"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": ""
+        },
+        "persistent-workspaces": { "*": [1, 2, 3, 4, 5] }
+    },
+
+    "custom/music": {
+        "format": " {}",
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/music.sh",
+        "on-click": "~/.config/waybar/scripts/music.sh toggle",
+        "on-click-right": "~/.config/waybar/scripts/music.sh next",
+        "return-type": "json"
+    },
+
+    "clock": {
+        "format": "{:%H:%M  %d/%m}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    "cpu": { "format": "󰻠 {usage}%" },
+    "memory": { "format": " {percentage}%" },
+
+    "network": {
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "interval": 5
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"]
+    },
+
+    "tray": { "icon-size": 14, "spacing": 8 },
+
+    "custom/notification": {
+        "format": "",
+        "on-click": "swaync-client -t -sw"
+    }
+}

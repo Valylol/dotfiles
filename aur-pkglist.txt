@@ -1,0 +1,14 @@
+brave-bin
+foliate-git
+neofetch
+python-eyed3
+python-pywalfox
+python313
+smassh-bin
+wallust
+wl-screenrec-git
+wl-screenrec-git-debug
+wlogout
+yay
+yay-debug
+yt-x-git
